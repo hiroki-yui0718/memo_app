@@ -1,0 +1,29 @@
+<%= form_with model:@memo,local:true do |f| %>
+<table class="table">
+<tr>
+<th><%= f.label :article %></th>
+<td><%= f.text_field :article,class:"field" %></td>
+</tr>
+<tr>
+<th><%= f.label :image %></th>
+<td><%= f.file_field :image,class:"area" %></td>
+</tr>
+<tr>
+<th><%= f.label :memo1 %></th>
+<td><%= f.text_area :memo1,class:"area" %></td>
+</tr>
+<tr>
+<th><%= f.label :memo2 %></th>
+<td><%= f.text_area :memo2,class:"area" %></td>
+</tr>
+<tr>
+<th><%= f.label :memo3 %></th>
+<td><%= f.text_area :memo3,class:"area" %></td>
+</tr>
+<tr>
+<th><%= f.label :memo4 %></th>
+<td><%= f.text_area :memo4,class:"area" %></td>
+</tr>
+</table>
+<%= f.submit "投稿する",class:"btn btn-primary"%>
+<% end %>

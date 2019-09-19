@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MeMo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="contents">
+
+  <div class="boxA">
+  <div class="boxA-inner">
+  <div class="box1">
+    <div class="site">
+    <h1><%= link_to Memo,root_path %></h1>
+    </div>
+  </div>
+  
+  <div class="box2">
+  
+    <button type="button" id="menubtn">
+    <i class="fa fa-bars"></i><span>MENU</span>
+    </button>
+  
+    <nav class="menu" id="menu">
+    <ul>
+    <li><%= link_to "新規メモ",new_memo_path %></li>
+    <% if current_user %>
+    <li><%= link_to "ログアウト",logout_path %></li>
+    <% else %>
+    <li><%= link_to "ログイン",login_path %></li>
+    <% end %>
+    </ul>
+    </nav>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="box7">
+  <div class="box7-1">
+  <% if flash.notice.present? %>
+  <%= flash.notice %>
+  <% end %>
+  <%= yield %>
+  </div>
+  <div class="box7-2">
+  <% if current_user %>
+  <%= render 'sidebar' %>
+  <% end %>
+  
+  </div>
+  </div>
+  
+  
+  <div class="box5">
+  <div class="box5-inner">
+    <div class="copyright">
+    <p>Copyright &copy; TimeSwitch</p>
+    </div>
+  </div>
+  </div>
+  
+  
+  </body>
+  </html>
