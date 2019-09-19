@@ -1,5 +1,5 @@
 @charset "UTF-8";
-require bootstrap
+@import 'application.scss'; 
 
 
 body	{margin: 0;
