@@ -7,36 +7,11 @@
     <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="contents">
+  <body>
 
-  <div class="boxA">
-  <div class="boxA-inner">
-  <div class="box1">
-    <div class="site">
-    <h1><%= link_to Memo,root_path %></h1>
-    </div>
+  <div class="container">
+  <%= render "layouts/header" %>
   </div>
-  
-  <div class="box2">
-  
-    <button type="button" id="menubtn">
-    <i class="fa fa-bars"></i><span>MENU</span>
-    </button>
-  
-    <nav class="menu" id="menu">
-    <ul>
-    <li><%= link_to "新規メモ",new_memo_path %></li>
-    <% if current_user %>
-    <li><%= link_to "ログアウト",logout_path %></li>
-    <% else %>
-    <li><%= link_to "ログイン",login_path %></li>
-    <% end %>
-    </ul>
-    </nav>
-  </div>
-  </div>
-  </div>
-  
   
   <div class="box7">
   <div class="box7-1">
